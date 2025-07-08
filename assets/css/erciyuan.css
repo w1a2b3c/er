@@ -1,0 +1,529 @@
+body {
+    background: linear-gradient(135deg, #f8e1ff 0%, #aee2ff 100%, #fff6fa 100%);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    font-family: 'ZCOOL KuaiLe', 'Smiley Sans', '幼圆', '微软雅黑', Arial, sans-serif;
+    color: #444;
+    min-height: 100vh;
+    position: relative;
+}
+
+.header, .q-header {
+    background: rgba(255,255,255,0.85);
+    box-shadow: 0 4px 24px 0 #e0c3fc33;
+    border-radius: 0 0 24px 24px;
+    padding-bottom: 10px;
+}
+
+.navbar-title {
+    color: #ff8ae2;
+    text-shadow: 1px 2px 0 #fff, 0 2px 8px #aee2ff;
+    font-family: 'ZCOOL KuaiLe', 'Smiley Sans', '幼圆', '微软雅黑', Arial, sans-serif;
+}
+
+.card, .q-card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px 0 #aee2ff66, 0 0 16px #ffb6ec44;
+    margin-bottom: 18px;
+    border: 2.5px solid #ffb6ec55;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-head, .q-card-head {
+    background: linear-gradient(90deg, #ffb6ec 0%, #aee2ff 100%);
+    color: #fff;
+    border-radius: 18px 18px 0 0;
+    font-family: 'ZCOOL KuaiLe', 'Smiley Sans', '幼圆', '微软雅黑', Arial, sans-serif;
+    font-size: 1.15em;
+    padding: 12px 18px;
+    box-shadow: 0 2px 16px #ffb6ec55, 0 1px 8px #aee2ff33;
+    border-bottom: 2px dashed #aee2ff88;
+    position: relative;
+}
+.card-head::after, .q-card-head::after {
+    content: '✦';
+    position: absolute;
+    right: 18px; top: 10px;
+    font-size: 1.3em;
+    color: #fff8;
+    text-shadow: 0 0 8px #ffb6ec, 0 0 2px #aee2ff;
+}
+
+.q-btn, .nav-item, .more {
+    background: linear-gradient(90deg, #ffb6ec 0%, #aee2ff 100%);
+    color: #fff !important;
+    border-radius: 24px;
+    padding: 6px 18px;
+    font-family: 'ZCOOL KuaiLe', 'Smiley Sans', '幼圆', '微软雅黑', Arial, sans-serif;
+    font-size: 1em;
+    border: 2px solid #aee2ff55;
+    box-shadow: 0 2px 12px #ffb6ec66, 0 0 8px #aee2ff44;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    margin: 0 4px;
+}
+.q-btn:hover, .nav-item:hover, .more:hover {
+    background: linear-gradient(90deg, #aee2ff 0%, #ffb6ec 100%);
+    box-shadow: 0 4px 24px #ffb6ec99, 0 0 16px #aee2ff77;
+    border-color: #ffb6ec;
+    filter: brightness(1.08) saturate(1.2);
+}
+
+.item, .oz-timeline-item {
+    border-radius: 12px;
+    background: #fff6fa;
+    box-shadow: 0 2px 8px #aee2ff22;
+    margin: 6px 0;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.2s, background 0.2s;
+    position: relative;
+    overflow: visible;
+}
+.item:hover, .oz-timeline-item:hover {
+    background: #f8e1ff;
+    box-shadow: 0 4px 16px #ffb6ec33;
+}
+.item::before, .oz-timeline-item::before {
+    content: '★';
+    position: absolute;
+    left: -18px; top: 8px;
+    font-size: 1.1em;
+    color: #ffb6ecaa;
+    animation: star-spin 2.5s linear infinite;
+}
+@keyframes star-spin {
+    0% { transform: rotate(0deg) scale(1); }
+    100% { transform: rotate(360deg) scale(1.1); }
+}
+
+.icon img, .oz-timeline-item .icon img {
+    border-radius: 50%;
+    border: 2.5px solid #ffb6ec;
+    box-shadow: 0 2px 12px #aee2ff55;
+    width: 36px;
+    height: 36px;
+    background: #fff;
+    position: relative;
+}
+.icon img::after {
+    content: 'ฅ^•ﻌ•^ฅ';
+    position: absolute;
+    bottom: -10px; left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7em;
+    color: #ffb6ec;
+    opacity: 0.7;
+}
+
+/* 气泡/星星装饰 */
+body::before, body::after {
+    content: '';
+    position: fixed;
+    z-index: 0;
+    pointer-events: none;
+    width: 120px;
+    height: 120px;
+    background: url('data:image/svg+xml;utf8,<svg width="120" height="120" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="60" fill="%23ffb6ec" fill-opacity="0.18"/><circle cx="30" cy="30" r="12" fill="%23aee2ff" fill-opacity="0.22"/><polygon points="60,10 65,30 85,35 70,50 75,70 60,60 45,70 50,50 35,35 55,30" fill="%23fff" fill-opacity="0.18"/></svg>') no-repeat center center;
+    animation: float-bubble 12s infinite linear alternate;
+}
+body::before {
+    left: -40px; top: 40px;
+}
+body::after {
+    right: -40px; bottom: 40px;
+    animation-delay: 6s;
+}
+@keyframes float-bubble {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-40px) scale(1.08); }
+}
+
+/* 可爱字体引用 */
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+
+/* 其它细节美化可根据实际页面继续补充 */
+
+.erciyuan-left, .erciyuan-right {
+  position: fixed;
+  top: 80px;
+  z-index: 10;
+  pointer-events: none;
+}
+.erciyuan-left {
+  left: 0;
+}
+.erciyuan-right {
+  right: 0;
+}
+.erciyuan-left svg, .erciyuan-right svg {
+  display: block;
+  width: 90px;
+  height: 220px;
+  max-width: 22vw;
+}
+@media (max-width: 900px) {
+  .erciyuan-left, .erciyuan-right {
+    display: none;
+  }
+}
+
+/* 1. 樱花飘落动画（用伪元素+CSS实现简单版，建议JS特效更佳） */
+.sakura {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* 5. 页脚和侧边栏渐变+贴纸 */
+.footer, .side, .card.links {
+  background: linear-gradient(90deg, #aee2ff 0%, #ffb6ec 100%);
+  border-radius: 24px;
+  box-shadow: 0 0 24px #ffb6ec33;
+  position: relative;
+}
+.footer::before {
+  content: '';
+  position: absolute;
+  left: 12px; top: -24px;
+  width: 60px; height: 60px;
+  background: url('data:image/svg+xml;utf8,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><path d="M30 5 Q35 20 55 25 Q35 30 30 55 Q25 30 5 25 Q25 20 30 5 Z" fill="%23ffb6ec" fill-opacity="0.5"/><circle cx="30" cy="30" r="8" fill="%23fff" fill-opacity="0.7"/></svg>') no-repeat center/contain;
+  z-index: 2;
+  opacity: 0.7;
+}
+.footer::after {
+  content: '';
+  position: absolute;
+  right: 18px; bottom: -18px;
+  width: 48px; height: 48px;
+  background: url('data:image/svg+xml;utf8,<svg width="48" height="48" xmlns="http://www.w3.org/2000/svg"><path d="M24 4 Q28 16 44 20 Q28 24 24 44 Q20 24 4 20 Q20 16 24 4 Z" fill="%23aee2ff" fill-opacity="0.5"/><circle cx="24" cy="24" r="6" fill="%23fff" fill-opacity="0.7"/></svg>') no-repeat center/contain;
+  z-index: 2;
+  opacity: 0.7;
+}
+
+/* 6. 猫爪、魔法棒SVG点缀 */
+.erciyuan-paw {
+  position: absolute;
+  top: 12px; left: 12px;
+  width: 38px; height: 38px;
+  z-index: 10;
+  pointer-events: none;
+  background: url('data:image/svg+xml;utf8,<svg width="38" height="38" xmlns="http://www.w3.org/2000/svg"><ellipse cx="19" cy="28" rx="12" ry="8" fill="%23fff"/><ellipse cx="10" cy="20" rx="4" ry="5" fill="%23fff"/><ellipse cx="28" cy="20" rx="4" ry="5" fill="%23fff"/><ellipse cx="19" cy="16" rx="3" ry="3.5" fill="%23fff"/></svg>') no-repeat center/contain;
+}
+.erciyuan-magic {
+  position: absolute;
+  right: 18px; top: 8px;
+  width: 32px; height: 32px;
+  z-index: 10;
+  pointer-events: none;
+  background: url('data:image/svg+xml;utf8,<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg"><rect x="14" y="4" width="4" height="20" rx="2" fill="%23aee2ff"/><circle cx="16" cy="4" r="4" fill="%23ffb6ec"/><circle cx="16" cy="28" r="4" fill="%23ffb6ec"/></svg>') no-repeat center/contain;
+}
+
+/* 7. 侧边栏卡片贴纸 */
+.side .card::before {
+  content: '';
+  position: absolute;
+  left: 8px; top: 8px;
+  width: 32px; height: 32px;
+  background: url('data:image/svg+xml;utf8,<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg"><polygon points="16,2 20,12 31,12 22,19 25,30 16,23 7,30 10,19 1,12 12,12" fill="%23ffb6ec" fill-opacity="0.5"/></svg>') no-repeat center/contain;
+  opacity: 0.6;
+}
+
+/* 9. 可选：引入JS樱花飘落特效（需在HTML中插入JS） */
+/*
+<script src="https://cdn.jsdelivr.net/gh/jhammann/sakura/sakura.min.js"></script>
+<script>new Sakura('body');</script>
+*/ 
+
+/* ========== 二次元风格美化样式（acg-前缀） ========== */
+
+.acg-bg-gradient {
+  background: linear-gradient(135deg, #f8e1ff 0%, #aee9ff 100%) !important;
+}
+
+.acg-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px #aee9ff;
+  border: 2px solid #f8e1ff;
+  margin-bottom: 20px;
+  padding: 20px 24px;
+  position: relative;
+  transition: box-shadow 0.2s;
+}
+.acg-card:hover {
+  box-shadow: 0 6px 24px #ffb6e6;
+}
+
+.acg-btn {
+  background: #ffb6e6;
+  color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 2px 8px #f8e1ff;
+  border: none;
+  padding: 10px 28px;
+  font-size: 1.1em;
+  font-family: 'ZCOOL KuaiLe', '思源黑体', '微软雅黑', sans-serif;
+  transition: transform 0.2s, background 0.2s;
+  cursor: pointer;
+}
+.acg-btn:hover {
+  transform: scale(1.08) rotate(-2deg);
+  background: #aee9ff;
+}
+
+.acg-title {
+  font-family: 'ZCOOL KuaiLe', '思源黑体', '微软雅黑', sans-serif;
+  color: #a259ff;
+  font-size: 2em;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px #f8e1ff;
+  margin-bottom: 16px;
+}
+
+.acg-decoration-star {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: url('../images/star/5.png') no-repeat center/contain;
+  vertical-align: middle;
+}
+
+.acg-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 3px solid #aee9ff;
+  box-shadow: 0 2px 8px #ffb6e6;
+  object-fit: cover;
+}
+
+.acg-divider {
+  border: none;
+  border-top: 2px dashed #aee9ff;
+  margin: 24px 0;
+}
+
+.acg-bubble {
+  background: #fff0fa;
+  border-radius: 18px 18px 18px 0;
+  box-shadow: 0 2px 8px #ffb6e6;
+  padding: 12px 20px;
+  display: inline-block;
+  position: relative;
+}
+
+.acg-bubble:after {
+  content: '';
+  position: absolute;
+  left: 18px;
+  bottom: -12px;
+  width: 0;
+  height: 0;
+  border-top: 12px solid #fff0fa;
+  border-left: 12px solid transparent;
+}
+
+/* 可爱icon按钮 */
+.acg-icon-btn {
+  background: #fff;
+  border: 2px solid #aee9ff;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px #f8e1ff;
+  transition: background 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+.acg-icon-btn:hover {
+  background: #ffb6e6;
+  box-shadow: 0 4px 16px #aee9ff;
+}
+
+/* 二次元风格字体（需在页面引入字体文件） */
+.acg-font {
+  font-family: 'ZCOOL KuaiLe', '思源黑体', '微软雅黑', sans-serif !important;
+}
+
+/* ====== 二次元风格全局背景与字体 ====== */
+body {
+  background: linear-gradient(135deg, #ffb6ec 0%, #aee2ff 100%) fixed;
+  font-family: 'ZCOOL XiaoWei', '微软雅黑', '思源黑体', sans-serif;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ====== 卡片美化 ====== */
+.card, .q-card {
+  border-radius: 18px !important;
+  box-shadow: 0 6px 24px rgba(255,182,236,0.12), 0 1.5px 6px rgba(174,226,255,0.10);
+  background: rgba(255,255,255,0.92);
+  border: 2px solid #ffe066;
+  margin-bottom: 18px;
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+.card:hover, .q-card:hover {
+  box-shadow: 0 12px 32px #ffb6ec44, 0 2px 8px #aee2ff44;
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* ====== 按钮气泡动画 ====== */
+.q-btn {
+  border-radius: 24px;
+  background: linear-gradient(90deg, #ffb6ec 0%, #aee2ff 100%);
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(255,182,236,0.18);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.q-btn:hover {
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 4px 16px #ffb6ec88;
+}
+.q-btn::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 120%; height: 120%;
+  background: radial-gradient(circle, #fff6fa88 40%, transparent 70%);
+  opacity: 0.3;
+  transform: translate(-50%, -50%) scale(0.7);
+  pointer-events: none;
+}
+
+/* ====== icon圆形阴影 ====== */
+.icon img, .side-latest .icon img {
+  border-radius: 50%;
+  border: 2px solid #aee2ff;
+  box-shadow: 0 2px 8px #ffb6ec44;
+  background: #fff6fa;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.icon img:hover {
+  box-shadow: 0 4px 16px #ffb6ec88;
+  transform: scale(1.1) rotate(-3deg);
+}
+
+/* ====== 热门标签气泡 ====== */
+.q-btn[style*="background"] {
+  box-shadow: 0 2px 8px #ffb6ec44;
+  border: none;
+  color: #fff !important;
+  font-size: 1em;
+  letter-spacing: 1px;
+}
+
+/* ====== 页脚Q版吉祥物美化 ====== */
+.footer.q-footer {
+  background: linear-gradient(90deg, #aee2ff 0%, #ffb6ec 100%);
+  border-radius: 18px 18px 0 0;
+  color: #fff;
+  font-family: 'ZCOOL XiaoWei', '微软雅黑', sans-serif;
+  box-shadow: 0 -2px 12px #ffb6ec44;
+  position: relative;
+  overflow: visible;
+}
+.footer.q-footer svg {
+  filter: drop-shadow(0 2px 8px #ffb6ec88);
+}
+
+/* ====== 悬浮按钮美化 ====== */
+.suspend li, .suspend a {
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffb6ec 60%, #aee2ff 100%);
+  color: #fff;
+  box-shadow: 0 2px 8px #aee2ff44;
+  margin-bottom: 8px;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.suspend li:hover, .suspend a:hover {
+  background: linear-gradient(135deg, #aee2ff 60%, #ffb6ec 100%);
+  box-shadow: 0 4px 16px #ffb6ec88;
+  transform: scale(1.1);
+}
+
+/* ====== 二次元泡泡动画 ====== */
+.erciyuan-bubbles .bubble {
+  animation: float 6s infinite linear;
+  background: radial-gradient(circle at 30% 30%, #fff 60%, #aee2ff 100%);
+  opacity: 0.5;
+}
+@keyframes float {
+  0% { transform: translateY(0);}
+  100% { transform: translateY(-120px);}
+}
+
+/* ====== 樱花瓣动画 ====== */
+.sakura {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+}
+.sakura-petal {
+  position: absolute;
+  width: 32px; height: 32px;
+  background: url('../images/sakura.png') no-repeat center/contain;
+  opacity: 0.7;
+  animation: sakura-fall 8s linear infinite;
+}
+@keyframes sakura-fall {
+  0% { transform: translateY(-40px) rotate(0deg); }
+  100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+/* ====== Q版吉祥物动画 ====== */
+.q-mascot {
+  position: fixed;
+  right: 24px;
+  bottom: 80px;
+  z-index: 2000;
+  width: 90px;
+  height: 110px;
+  pointer-events: none;
+  animation: mascot-bounce 2.5s infinite cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes mascot-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+
+
+/* ====== 背景音乐按钮 ====== */
+#music-btn {
+  position: fixed;
+  left: 24px;
+  bottom: 80px;
+  z-index: 2100;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffb6ec 60%, #aee2ff 100%);
+  box-shadow: 0 2px 8px #aee2ff44;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+#music-btn:hover {
+  background: linear-gradient(135deg, #aee2ff 60%, #ffb6ec 100%);
+  box-shadow: 0 4px 16px #ffb6ec88;
+  transform: scale(1.1) rotate(-8deg);
+}
+#music-btn svg {
+  width: 32px; height: 32px;
+  fill: #fff;
+}
+
+/* ========== END ========== */ 

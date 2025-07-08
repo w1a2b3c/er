@@ -1,0 +1,250 @@
+/* modern.css - Q版卡通美化样式 */
+
+body {
+  font-family: 'Baloo 2', 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+  background: linear-gradient(135deg, #aee2ff 0%, #f7b733 100%);
+  color: #222;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: url('https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/ico/clouds.svg') repeat-x,
+              url('https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/ico/star.svg') repeat;
+  opacity: 0.12;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.header, .navbar {
+  background: linear-gradient(90deg, #6ec6ff 0%, #ffd6e0 100%);
+  color: #fff;
+  padding: 0 24px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 16px rgba(110,198,255,0.12);
+  border-radius: 0 0 32px 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.navbar-logo img {
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(255,214,224,0.18);
+  border: 3px solid #fff;
+  background: #fff;
+  width: 48px;
+  height: 48px;
+}
+
+.navbar-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #6ec6ff;
+  text-shadow: 1px 2px 0 #fff, 0 2px 8px #ffd6e0;
+  font-family: 'Baloo 2', 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 16px;
+  font-weight: 600;
+  border-radius: 18px;
+  padding: 8px 18px;
+  background: linear-gradient(90deg, #ffd6e0 0%, #aee2ff 100%);
+  box-shadow: 0 2px 8px rgba(174,226,255,0.12);
+  transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+  display: inline-block;
+  font-size: 1.1rem;
+}
+
+.navbar a:hover {
+  color: #fff;
+  background: linear-gradient(90deg, #aee2ff 0%, #ffd6e0 100%);
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 4px 16px rgba(255,214,224,0.18);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 32px auto 0 auto;
+  padding: 0 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  background: #fffbe7;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(110,198,255,0.13);
+  padding: 28px 24px 24px 24px;
+  margin-bottom: 28px;
+  transition: box-shadow 0.2s, transform 0.18s;
+  position: relative;
+  overflow: visible;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  left: 24px; top: -24px;
+  width: 48px; height: 48px;
+  background: url('https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/ico/star.svg') no-repeat center/contain;
+  opacity: 0.18;
+  z-index: 0;
+}
+
+.card:hover {
+  box-shadow: 0 12px 36px rgba(255,214,224,0.18);
+  transform: translateY(-4px) scale(1.02);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffb300;
+  margin-bottom: 12px;
+  font-family: 'Baloo 2', 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+  text-shadow: 0 2px 8px #fffbe7;
+}
+
+.card-desc {
+  color: #666;
+  font-size: 1.08rem;
+  margin-bottom: 8px;
+}
+
+.btn {
+  background: linear-gradient(90deg, #6ec6ff 0%, #ffd6e0 100%);
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  padding: 10px 28px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-family: 'Baloo 2', 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(110,198,255,0.13);
+  transition: background 0.18s, transform 0.18s;
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #ffd6e0 0%, #6ec6ff 100%);
+  transform: scale(1.08) rotate(2deg);
+}
+
+input, select, textarea {
+  border: 1.5px solid #aee2ff;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 1.08rem;
+  margin-bottom: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border 0.18s;
+  background: #fff;
+}
+
+input:focus, select:focus, textarea:focus {
+  border: 2px solid #ffd6e0;
+  outline: none;
+}
+
+.footer {
+  background: linear-gradient(90deg, #6ec6ff 0%, #ffd6e0 100%);
+  color: #fff;
+  text-align: center;
+  padding: 32px 0 16px 0;
+  margin-top: 48px;
+  font-size: 1.08rem;
+  letter-spacing: 1px;
+  border-radius: 32px 32px 0 0;
+  box-shadow: 0 -2px 16px rgba(110,198,255,0.08);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 4px;
+  }
+  .header, .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 16px 8px;
+    border-radius: 0 0 24px 24px;
+  }
+  .card {
+    padding: 16px;
+    border-radius: 18px;
+  }
+  .navbar a {
+    margin: 8px 8px;
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+}
+
+/* Q版卡通导航分类美化 */
+.q-sort {
+  padding: 0;
+  margin: 0 0 24px 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.q-sort-item {
+  background: linear-gradient(90deg, #aee2ff 0%, #ffd6e0 100%);
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(110,198,255,0.13);
+  transition: transform 0.18s, box-shadow 0.18s;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+.q-sort-item a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 18px;
+  color: #333;
+  font-size: 1.1rem;
+  font-family: 'Baloo 2', 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+  text-decoration: none;
+  font-weight: 600;
+  gap: 10px;
+}
+.q-sort-item:hover {
+  transform: scale(1.06) rotate(-2deg);
+  box-shadow: 0 6px 24px rgba(255,214,224,0.18);
+  background: linear-gradient(90deg, #ffd6e0 0%, #aee2ff 100%);
+}
+.q-icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fffbe7;
+  border-radius: 50%;
+  margin-right: 8px;
+  box-shadow: 0 1px 4px #ffd6e033;
+  font-size: 1.2em;
+}
+.q-top-item .q-icon {
+  background: #ffe066;
+  border: 2px solid #ffd700;
+}
+.q-title {
+  font-size: 1.1em;
+  letter-spacing: 1px;
+} 
